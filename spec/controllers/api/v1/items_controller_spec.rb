@@ -94,6 +94,8 @@ RSpec.describe Api::V1::ItemsController do
       expect(json_response[:name]).to eq("Kitten")
       expect(json_response[:description]).to eq("Super cute")
       expect(json_response[:image_url]).to eq(img)
+      expect(json_response[:created_at]).to be_nil
+      expect(json_response[:updated_at]).to be_nil
     end
   end
 end
