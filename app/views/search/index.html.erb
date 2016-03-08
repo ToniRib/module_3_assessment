@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <% if @products.count == 0 %>
+      <% if @products.empty? %>
         <h1 class="red">No products were found for that search term</h1>
       <% end %>
       <h2>Results: <%= @products.count %></h2>
