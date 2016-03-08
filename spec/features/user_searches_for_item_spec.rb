@@ -16,6 +16,7 @@ RSpec.feature "User searches for item" do
     expect(page).to have_content(product_description)
     expect(page).to have_content(product_sku)
     expect(page).to have_content(customer_review_average)
+    expect(page).to have_css("img[src*='#{image_path}']")
   end
 
   def product_name
@@ -38,5 +39,9 @@ RSpec.feature "User searches for item" do
 
   def sale_price
     "Sale Price: $44.95"
+  end
+
+  def image_path
+    "http://images.bestbuy.com/BestBuy_US/images/products/9068/9068146_sa.jpg"
   end
 end
