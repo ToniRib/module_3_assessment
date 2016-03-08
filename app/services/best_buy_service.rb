@@ -42,8 +42,12 @@ class BestBuyService
 
   def build_products
     response[:products].map do |product|
-      Product.new(name: product.name,
-                  sku: product.sku)
+      Product.new(name: product[:name],
+                  sku: product[:sku],
+                  image: product[:image],
+                  short_description: product[:shortDescription],
+                  sale_price: product[:salePrice],
+                  customer_review_average: product[:customerReviewAverage])
     end
   end
 end
