@@ -16,6 +16,7 @@ gem "minitest-rails"
 gem 'rspec-rails', '~> 3.0'
 gem 'faraday'
 gem 'figaro'
+gem 'responders'
 
 group :development do
   gem "spring"
