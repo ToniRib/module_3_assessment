@@ -4,4 +4,15 @@
       <h1>Results: <%= @products.count %></h1>
     </div>
   </div>
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-sm-3">
+        <h5><%= product.name %></h5>
+        <%= image_tag product.image, class: "product-image" %>
+        <p><%= product.short_description %></p>
+        <p>Customer Review Average: <%= product.customer_review_average %></p>
+        <p>Sale Price: $<%= product.sale_price %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
