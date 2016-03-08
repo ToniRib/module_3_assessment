@@ -8,6 +8,7 @@
     <% @products.each do |product| %>
       <div class="col-sm-3 item" id="product-<%= product.name %>">
         <h5><%= product.name %></h5>
+        <p>SKU: <%= product.sku %></p>
         <%= image_tag product.image, class: "product-image" %>
         <p><%= product.short_description %></p>
         <p>Customer Review Average: <%= product.customer_review_average %></p>

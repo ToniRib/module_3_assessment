@@ -14,16 +14,29 @@ RSpec.feature "User searches for item" do
 
     expect(page).to have_content(product_name)
     expect(page).to have_content(product_description)
+    expect(page).to have_content(product_sku)
+    expect(page).to have_content(customer_review_average)
   end
 
   def product_name
-    "Sennheiser - Camera-Mount Wireless Microphone System - Black"
+    "Sennheiser - CX 1.00 Earbud Headphones - Black"
   end
 
   def product_description
-    "SENNHEISER Camera-Mount Wireless Microphone System: " \
-    "Invisible clip-on microphone; sturdy metal housing; " \
-    "automatic frequency management; easy-to-read illuminated" \
-    " display; 4-level battery indicator; 626-668MHz frequency range"
+    "SENNHEISER CX 1.00 Earbud Headphones: Noise-blocking design; " \
+    "dynamic transducer principle; ultrasmall design; 3.5mm connector;" \
+    " 3.9' cable; includes 4 sizes of ear adapters"
+  end
+
+  def product_sku
+    "SKU: 9068146"
+  end
+
+  def customer_review_average
+    "Customer Review Average: 5.0"
+  end
+
+  def sale_price
+    "Sale Price: $44.95"
   end
 end
