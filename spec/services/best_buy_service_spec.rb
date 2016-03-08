@@ -2,10 +2,18 @@ require "rails_helper"
 
 RSpec.describe BestBuyService, type: :model do
   describe "#initialize" do
-    it "can be initialized with a search term" do
+    it "can be initialized with a one word search term" do
       service = BestBuyService.new("sennheiser")
 
       expect(service.search_term).to eq("sennheiser")
+      expect(service.connection.class).to eq(Faraday::Connection)
+      expect(service.response).to be_nil
+    end
+
+    it "can be initialized with a multi-word search term" do
+      service = BestBuyService.new("sennheiser headphones white")
+
+      expect(service.search_term).to eq("sennheiser%20headphones%20white")
       expect(service.connection.class).to eq(Faraday::Connection)
       expect(service.response).to be_nil
     end
