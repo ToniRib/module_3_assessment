@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/rails-api/active_model_serializers.git
+  revision: 2acea0b0b2226940be1d229cb64cfd4f478c0da7
+  specs:
+    active_model_serializers (0.10.0.rc4)
+      actionpack (>= 4.0)
+      activemodel (>= 4.0)
+      railties (>= 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -222,6 +231,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers!
   capybara
   coffee-rails (~> 4.0.0)
   database_cleaner

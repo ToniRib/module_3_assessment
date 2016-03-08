@@ -17,6 +17,7 @@ gem 'rspec-rails', '~> 3.0'
 gem 'faraday'
 gem 'figaro'
 gem 'responders'
+gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 
 group :development do
   gem "spring"
