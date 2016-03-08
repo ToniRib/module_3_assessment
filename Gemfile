@@ -14,6 +14,8 @@ gem "therubyracer"
 gem "less-rails-bootstrap"
 gem "minitest-rails"
 gem 'rspec-rails', '~> 3.0'
+gem 'faraday'
+gem 'figaro'
 
 group :development do
   gem "spring"
@@ -24,6 +26,10 @@ group :development, :test do
 end
 
 group :test do
+  gem 'simplecov', require: false
   gem "capybara"
   gem 'database_cleaner'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'launchy'
 end
