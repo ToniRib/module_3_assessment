@@ -67,4 +67,20 @@ RSpec.describe Api::V1::ItemsController do
       expect(response).to be_successful
     end
   end
+
+  describe "POST #create" do
+    let (:json_response) { JSON.parse(response.body, symbolize_names: true) }
+
+    it "responds with HTTP 201 success status code if item is created" do
+      img = "https://pbs.twimg.com/profile_images" \
+            "/619573624903761920/EGZ2I6wG.jpg"
+
+      post :create, format: :json, item: { name:        "Kitten",
+                                           description: "Super cute",
+                                           image_url:   img }
+
+      expect(response.status).to eq(201)
+      expect(response).to be_successful
+    end
+  end
 end
