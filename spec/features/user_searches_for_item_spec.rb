@@ -31,6 +31,34 @@ RSpec.feature "User searches for item" do
 
     expect(current_path).to eq(search_path)
     expect(page).to have_content("Results: 3")
+    expect(page).to have_content("SKU: 9068155")
+    expect(page).to have_content("SKU: 9068004")
+    expect(page).to have_content("SKU: 9068128")
+    expect(page).to have_css(".product", :count => 3)
+
+    within ".product:nth-child(1)" do
+      expect(page).to have_content("Sennheiser - CX 2.00G Earbud Headphones - White")
+      expect(page).to have_content("SENNHEISER CX 2.00G Earbud Headphones: Dynamic transducers; 3-button in-line remote with integrated microphone; 4 ear adapter sizes; 3.9' cable; 3.5mm angled plug")
+      expect(page).to have_content("Customer Review Average: 1.0")
+      expect(page).to have_content("Sale Price: $54.95")
+      expect(page).to have_css("img[src*='http://images.bestbuy.com/BestBuy_US/images/products/9068/9068155_sa.jpg']")
+    end
+
+    within ".product:nth-child(2)" do
+      expect(page).to have_content("Sennheiser - CX 3.00 Earbud Headphones - White")
+      expect(page).to have_content("SENNHEISER CX 3.00 Earbud Headphones: Dynamic transducers; 4 ear adapter sizes; 3.9' elliptical, tangle-free cable; 3.5mm angled plug; includes a carrying case")
+      expect(page).to have_content("Customer Review Average: 3.5")
+      expect(page).to have_content("Sale Price: $45.99")
+      expect(page).to have_css("img[src*='http://images.bestbuy.com/BestBuy_US/images/products/9068/9068004_sa.jpg']")
+    end
+
+    within ".product:nth-child(3)" do
+      expect(page).to have_content("Sennheiser - CX 5.00i Earbud Headphones - White")
+      expect(page).to have_content("SENNHEISER CX 5.00i Earbud Headphones: Dynamic transducers; 3-button in-line remote with integrated omnidirectional microphone; ergonomic, angled design; 4 ear adapter sizes; 3.9' elliptical, tangle-free cable; 3.5mm angled plug")
+      expect(page).to have_content("Customer Review Average: 2.0")
+      expect(page).to have_content("Sale Price: $89.95")
+      expect(page).to have_css("img[src*='http://images.bestbuy.com/BestBuy_US/images/products/9068/9068128_sa.jpg']")
+    end
   end
 
   def product_name
