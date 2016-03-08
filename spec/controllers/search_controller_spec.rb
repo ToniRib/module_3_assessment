@@ -10,5 +10,22 @@ RSpec.describe SearchController, type: :controller do
       expect(response.status).to eq(200)
       expect(response).to be_successful
     end
+
+    it "assigns products and search_term" do
+      VCR.use_cassette("search_sennheiser") do
+        get :index, search: "sennheiser"
+      end
+
+      expect(assigns(:products)).to be_a(Array)
+      expect(assigns(:search_term)).to eq("sennheiser")
+    end
+
+    it "renders the index template" do
+      VCR.use_cassette("search_sennheiser") do
+        get :index, search: "sennheiser"
+      end
+
+      expect(response).to render_template("index")
+    end
   end
 end
