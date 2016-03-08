@@ -17,6 +17,8 @@ RSpec.feature "User searches for item" do
     expect(page).to have_content(product_sku)
     expect(page).to have_content(customer_review_average)
     expect(page).to have_css("img[src*='#{image_path}']")
+
+    expect(page).to have_css(".product", :count => 15)
   end
 
   def product_name
