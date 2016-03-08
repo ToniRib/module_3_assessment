@@ -4,6 +4,11 @@ RSpec.describe Product, type: :model do
       product = Product.new(product_params)
 
       expect(product.name).to eq("Product")
+      expect(product.short_description).to eq("short description")
+      expect(product.sku).to eq(849381)
+      expect(product.image).to eq("image.png")
+      expect(product.sale_price).to eq("543.21")
+      expect(product.customer_review_average).to eq("5.0")
     end
   end
 
