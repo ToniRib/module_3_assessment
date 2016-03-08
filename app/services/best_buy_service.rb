@@ -2,7 +2,7 @@ class BestBuyService
   attr_reader :connection, :response, :search_term
 
   def initialize(search_term)
-    @search_term = search_term
+    @search_term = search_term.gsub(" ", "%20")
 
     set_up_connection
   end

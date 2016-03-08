@@ -21,6 +21,18 @@ RSpec.feature "User searches for item" do
     expect(page).to have_css(".product", :count => 15)
   end
 
+  scenario "user searches for sennheiser headphones white from root path" do
+    visit root_path
+
+    VCR.use_cassette("search_sennheiser_white_headphones") do
+      fill_in "search", with: "sennheiser headphones white"
+      click_on "search"
+    end
+
+    expect(current_path).to eq(search_path)
+    expect(page).to have_content("Results: 3")
+  end
+
   def product_name
     "Sennheiser - CX 1.00 Earbud Headphones - Black"
   end
