@@ -17,7 +17,6 @@ RSpec.describe SearchController, type: :controller do
       end
 
       expect(assigns(:products)).to be_a(Array)
-      expect(assigns(:search_term)).to eq("sennheiser")
     end
 
     it "renders the index template" do

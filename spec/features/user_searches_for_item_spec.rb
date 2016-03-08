@@ -70,7 +70,7 @@ RSpec.feature "User searches for item" do
     end
 
     expect(current_path).to eq(search_path)
-    expect(page).to have_content("No products could be found matching the search term: toni rib")
+    expect(page).to have_content("No products were found for that search term")
     expect(page).to have_content("Results: 0")
   end
 
