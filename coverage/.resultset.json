@@ -1,0 +1,88 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/tonirib/turing/3module/module_3_assessment/storedom/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/tonirib/turing/3module/module_3_assessment/storedom/app/helpers/items_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/tonirib/turing/3module/module_3_assessment/storedom/app/helpers/orders_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/tonirib/turing/3module/module_3_assessment/storedom/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/tonirib/turing/3module/module_3_assessment/storedom/app/controllers/items_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/tonirib/turing/3module/module_3_assessment/storedom/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/tonirib/turing/3module/module_3_assessment/storedom/app/models/item.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/tonirib/turing/3module/module_3_assessment/storedom/app/controllers/orders_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/tonirib/turing/3module/module_3_assessment/storedom/app/controllers/users_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/tonirib/turing/3module/module_3_assessment/storedom/app/models/order.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/tonirib/turing/3module/module_3_assessment/storedom/app/models/order_item.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/tonirib/turing/3module/module_3_assessment/storedom/app/models/user.rb": [
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1457400571
+  }
+}
