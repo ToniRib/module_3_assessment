@@ -18,7 +18,13 @@ RSpec.feature "User searches for item" do
     expect(page).to have_content(customer_review_average)
     expect(page).to have_css("img[src*='#{image_path}']")
 
-    expect(page).to have_css(".product", :count => 15)
+    expect(page).to have_css(".product", count: 15)
+    expect(page).to have_css(".product-name", count: 15)
+    expect(page).to have_css(".product-sku", count: 15)
+    expect(page).to have_css(".product-short-description", count: 15)
+    expect(page).to have_css(".product-image", count: 15)
+    expect(page).to have_css(".product-review", count: 15)
+    expect(page).to have_css(".product-sale-price", count: 15)
   end
 
   scenario "user searches for sennheiser headphones white from root path" do
@@ -34,7 +40,13 @@ RSpec.feature "User searches for item" do
     expect(page).to have_content("SKU: 9068155")
     expect(page).to have_content("SKU: 9068004")
     expect(page).to have_content("SKU: 9068128")
-    expect(page).to have_css(".product", :count => 3)
+    expect(page).to have_css(".product", count: 3)
+    expect(page).to have_css(".product-name", count: 3)
+    expect(page).to have_css(".product-sku", count: 3)
+    expect(page).to have_css(".product-short-description", count: 3)
+    expect(page).to have_css(".product-image", count: 3)
+    expect(page).to have_css(".product-review", count: 3)
+    expect(page).to have_css(".product-sale-price", count: 3)
 
     within ".product:nth-child(1)" do
       expect(page).to have_content("Sennheiser - CX 2.00G Earbud Headphones - White")
