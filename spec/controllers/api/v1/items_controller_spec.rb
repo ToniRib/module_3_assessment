@@ -82,5 +82,18 @@ RSpec.describe Api::V1::ItemsController do
       expect(response.status).to eq(201)
       expect(response).to be_successful
     end
+
+    it "responds with the name, description, and image_url of the item" do
+      img = "https://pbs.twimg.com/profile_images" \
+            "/619573624903761920/EGZ2I6wG.jpg"
+
+      post :create, format: :json, item: { name:        "Kitten",
+                                           description: "Super cute",
+                                           image_url:   img }
+
+      expect(json_response[:name]).to eq("Kitten")
+      expect(json_response[:description]).to eq("Super cute")
+      expect(json_response[:image_url]).to eq(img)
+    end
   end
 end

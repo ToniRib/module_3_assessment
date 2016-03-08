@@ -12,4 +12,14 @@ class Api::V1::ItemsController < ApplicationController
   def destroy
     respond_with Item.find(params[:id]).destroy
   end
+
+  def create
+    respond_with Item.create(item_params)
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:name, :description, :image_url)
+  end
 end
