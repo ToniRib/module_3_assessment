@@ -53,4 +53,18 @@ RSpec.describe Api::V1::ItemsController do
       expect(json_response[:updated_at]).to be_nil
     end
   end
+
+  describe "DELETE #destroy" do
+    let (:json_response) { JSON.parse(response.body, symbolize_names: true) }
+
+    it "responds with HTTP 204 success status code if item is deleted" do
+      item = create(:item)
+
+      delete :destroy, id: item.id, format: :json
+
+      expect(Item.count).to eq(0)
+      expect(response.status).to eq(204)
+      expect(response).to be_successful
+    end
+  end
 end
