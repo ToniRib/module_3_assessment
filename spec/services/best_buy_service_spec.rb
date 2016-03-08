@@ -39,5 +39,16 @@ RSpec.describe BestBuyService, type: :model do
       expect(first_product.respond_to?(:image)).to be true
       expect(first_product.respond_to?(:customer_review_average)).to be true
     end
+
+    it "returns an empty array if the search found no products" do
+      service = BestBuyService.new("toni rib")
+
+      products = VCR.use_cassette("search_toni_rib") do
+        service.find_products
+      end
+
+      expect(products.count).to eq(0)
+      expect(products).to eq(Array.new)
+    end
   end
 end
