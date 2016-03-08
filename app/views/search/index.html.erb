@@ -9,14 +9,7 @@
   </div>
   <div class="row">
     <% @products.each do |product| %>
-      <div class="col-sm-3 product" id="product-<%= product.name %>">
-        <h5 class="product-name"><%= product.name %></h5>
-        <p class="product-sku">SKU: <%= product.sku %></p>
-        <%= image_tag product.image, class: "product-image" %>
-        <p class="product-short-description"><%= product.short_description %></p>
-        <p class="product-review">Customer Review Average: <%= product.customer_review_average %></p>
-        <p class="product-sale-price">Sale Price: $<%= product.sale_price %></p>
-      </div>
+      <%= render partial: "product", locals: { product: product } %>
     <% end %>
   </div>
 </div>
