@@ -8,5 +8,7 @@ RSpec.feature "User searches for item" do
     click_on "search"
 
     expect(current_path).to eq(search_path)
+
+    expect(page).to have_content("Results: 15")
   end
 end

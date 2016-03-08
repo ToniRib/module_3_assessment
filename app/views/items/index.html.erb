@@ -1,9 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <label>Search For Item From Best Buy: </label>
-      <%= text_field_tag "search" %>
-      <%= link_to "search", search_path %>
+      <%= form_tag search_path, method: :get do %>
+        <label>Search For Item From Best Buy: </label>
+        <%= text_field_tag "search" %>
+        <%= submit_tag "search" %>
+      <% end %>
     </div>
   </div>
   <div class="row">
