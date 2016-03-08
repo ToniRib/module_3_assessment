@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
+      <% if @products.count == 0 %>
+        <h1>No products could be found matching the search term: <%= @search_term %></h1>
+      <% end %>
       <h1>Results: <%= @products.count %></h1>
     </div>
   </div>

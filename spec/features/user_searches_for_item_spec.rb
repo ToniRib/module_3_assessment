@@ -61,6 +61,19 @@ RSpec.feature "User searches for item" do
     end
   end
 
+  scenario "search returns no products" do
+    visit root_path
+
+    VCR.use_cassette("search_toni_rib") do
+      fill_in "search", with: "toni rib"
+      click_on "search"
+    end
+
+    expect(current_path).to eq(search_path)
+    expect(page).to have_content("No products could be found matching the search term: toni rib")
+    expect(page).to have_content("Results: 0")
+  end
+
   def product_name
     "Sennheiser - CX 1.00 Earbud Headphones - Black"
   end
