@@ -33,7 +33,9 @@ RSpec.describe Api::V1::ItemsController do
     let (:json_response) { JSON.parse(response.body, symbolize_names: true) }
 
     it "responds with HTTP 200 success status code" do
-      get :show, id: 1, format: :json
+      item = create(:item)
+
+      get :show, id: item.id, format: :json
 
       expect(response.status).to eq(200)
       expect(response).to be_successful
@@ -42,7 +44,7 @@ RSpec.describe Api::V1::ItemsController do
     it "responds with the item's name, description, and image_url" do
       item = create(:item)
 
-      get :show, id: 1, format: :json
+      get :show, id: item.id, format: :json
 
       expect(json_response[:name]).to eq(item.name)
       expect(json_response[:description]).to eq(item.description)
