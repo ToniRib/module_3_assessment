@@ -9,7 +9,8 @@ class BestBuyService
 
   def find_products
     get_api_response
-    binding.pry
+
+    build_products
   end
 
   private
@@ -37,5 +38,12 @@ class BestBuyService
 
   def response_options
     "sku,name,salePrice,customerReviewAverage,shortDescription,image"
+  end
+
+  def build_products
+    response[:products].map do |product|
+      Product.new(name: product.name,
+                  sku: product.sku)
+    end
   end
 end
